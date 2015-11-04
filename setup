@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo yum install ruby ruby-devel rake rubygem-bundler nodejs;
+bundle install;
+bundle exec rake db:create db:migrate;
