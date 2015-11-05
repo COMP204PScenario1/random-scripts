@@ -13,7 +13,6 @@ sudo systemctl start postgresql.service;
 sudo bash -c "sudo -u postgres createuser -dw localuser;"
 sudo bash -c "sudo -u postgres psql -c 'CREATE DATABASE localuser;'";
 sudo bash -c "sudo -u postgres psql -c 'DROP USER todo_list_app;'";
-sudo sudo -u postgres psql -c "CREATE USER todo_list_app WITH PASSWORD 'todo_list_app';"
-sudo bash -c "sudo -u postgres psql -c 'CREATE DATABASE todo_list;'";
+sudo sudo -u postgres psql -c "CREATE USER todo_list_app WITH PASSWORD 'todo_list_app' CREATEDB;"
 
 exit 0; 
