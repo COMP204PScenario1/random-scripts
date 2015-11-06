@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sudo yum install postgresql-server;
 sudo postgresql-setup initdb;
 sudo systemctl enable postgresql.service;
 sudo systemctl stop postgresql.service;
