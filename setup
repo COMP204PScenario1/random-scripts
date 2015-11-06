@@ -3,3 +3,4 @@
 sudo yum install ruby ruby-devel rake rubygem-bundler nodejs;
 bundle install;
 bundle exec rake db:create db:migrate;
+bundle exec rake assets:precompile
