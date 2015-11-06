@@ -2,8 +2,18 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+kill -INT $(cat tmp/pids/server.pid)
+
 git pull
 
 $DIR/setup
 
-rails server --port=8000
+if [ ! -e '../secret' ]; then
+rake secret >../secret
+
+fi
+
+export SECRET_KEY_BASE=`cat ../secret` 
+
+rails server --port=8000 -d
+
